@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="styles.css">
 
     <title>REPL</title>
 
@@ -18,8 +19,8 @@
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
   </head>
 
-  <body>
-    <div class="dropdown">
+  <body id="body">
+    <div class="dropdown" id="dropdownButton">
       <button
         class="btn btn-secondary btn-lg dropdown-toggle"
         type="button"
@@ -31,41 +32,70 @@
         Dropdown button
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Rock paper scissors</a>
-        <a class="dropdown-item" href="#">Tic-Tac-Toe</a>
+        <a
+          class="dropdown-item"
+          id="RockPaperScissorsButton"
+          onclick="RockPaperScissors()"
+          href="#"
+          >Rock paper scissors</a
+        >
+        <a class="dropdown-item" onclick="TicTacToe()" href="#">Tic-Tac-Toe</a>
         <a class="dropdown-item" href="#">Something else here</a>
       </div>
     </div>
 
-    
-
-    <div>"What's your choice? 'r' for rock, 'p' for paper, 's' for scissors</div>
-    <br>
-    <input type="text" id="rock-paper-scissors-input"/>
-    <button type="button" id="button">Play rock-paper-scissors</button>
-    <br>
-    <br>
-    <div id="result">
-        This is test
+    <div id="RockPaperScissors">
+      <div>
+        "What's your choice? 'r' for rock, 'p' for paper, 's' for scissors
+      </div>
+      <br />
+      <input type="text" id="rock-paper-scissors-input" />
+      <button type="button" id="button">Play rock-paper-scissors</button>
+      <br />
+      <br />
+      <div id="result"></div>
     </div>
-    <button type="button" id="button-tic-tac-toe">Play tic-tac-toe</button>
-    <br>
-    <br>
-    <div>This are the positions, please choose where you want to add your piece</div>
-    <br>
-    <div id="tic-tac-toe-rules"></div>
-    <br>
-    <div>Current board</div>
-    <br>
-    <div id="tic-tac-toe-result"> </div>
-    <input type="text" id="tic-tac-toe-input"/>
-    <div></div>
 
-      <py-script src="tic-tac-toe.py">   
-            
-    
-        </py-script>   
-    
+    <div id="TicTacToe">
+      <button type="button" id="button-tic-tac-toe">Play again</button>
+      <br />
+      <br />
+      <div>
+        This are the positions, please choose where you want to add your piece
+      </div>
+      <div id="tic-tac-toe-rules"></div>
+      <br />
+      <h4>Current game</h4>
+      <br />
+      <div id="tic-tac-toe-result"></div>
+      <input type="text" id="tic-tac-toe-input" />
+      <button type="button" id="Submit-square-tic-tac-toe">
+        Submit square
+      </button>
+    </div>
+
+    <py-script src="my_script.py"> </py-script>
+
+    <script>
+      function RockPaperScissors() {
+        document.getElementById("TicTacToe").style.display = "none"
+        if ( document.getElementById("RockPaperScissors").style.display === "none") {
+            document.getElementById("RockPaperScissors").style.display = "block";
+        } else {
+            document.getElementById("RockPaperScissors").style.display = "none";
+        }
+      }
+
+      function TicTacToe() {
+        document.getElementById("RockPaperScissors").style.display = "none"
+        if ( document.getElementById("TicTacToe").style.display === "none") {
+            document.getElementById("TicTacToe").style.display = "block";
+        } else {
+            document.getElementById("TicTacToe").style.display = "none";
+        }
+      }
+    </script>
+
     <!-- Hello world! <br />
     This is the current date and time, as computed by Python: -->
     <!-- <py-config type="json">
@@ -73,49 +103,6 @@
           "packages": ["numpy", "matplotlib"]
         }
     </py-config> -->
-    
-
-    <!-- import random
-
-
-        def my_function():
-        
-            text = Element('test-input').element.value
-            # user = input("What's your choice? 'r' for rock, 'p' for paper, 's' for scissors\n")
-            computer = random.choice(['r', 'p', 's'])
-        
-            if text == computer:
-                pyscript.write("test", 'It\'s a tie')
-        
-            # r > s, s > p, p > r
-            if is_win(text, computer):
-                pyscript.write("test",'You won!')
-        
-            pyscript.write("test",'You lost!')
-        
-        def is_win(player, opponent):
-            # return true if player wins
-            # r > s, s > p, p > r
-            if (player == 'r' and opponent == 's') or (player == 's' and opponent == 'p') \
-                or (player == 'p' and opponent == 'r'):
-                return True
-          -->
-
-
-       
-
-            <!-- import js
-        from datetime import datetime
-        now = datetime.now()
-        now.strftime("%m/%d/%Y, %H:%M:%S") -->
-
-        <!-- import js
-       
-        # from js import document
-
-       #  test = Element("test") -->
-    
-
 
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -134,6 +121,5 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
-
   </body>
 </html>
