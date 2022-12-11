@@ -1,5 +1,4 @@
 #RockPaperScissors {
-  display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -15,7 +14,6 @@
 
 #TicTacToe {
   text-align: center;
-  display: flex;
   justify-content: center;
   align-items: center;
   margin: 10px;
@@ -37,3 +35,24 @@
   justify-content: center;
   align-items: center;
 }
+/* 
+#mario-game {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: block;
+} */
+
+#mario {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  display: none;
+  background-color: rgb(0, 255, 242);
+  border-style: solid;
+  border-radius: 20px;
+  border-width: 2px;
+  border-color: black;
+  padding: 20px;
+} 

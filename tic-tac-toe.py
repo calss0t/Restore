@@ -5,9 +5,6 @@ from js import document, console
 from pyodide.ffi import create_proxy
 
 
-
-
-
 class Player():
     def __init__(self, letter):
         self.letter = letter
