@@ -263,6 +263,3 @@ Player_makes_move = create_proxy(playHumanPlayer)
 document.getElementById("button-tic-tac-toe").addEventListener("click", Play_Again)
 
 document.getElementById("Submit-square-tic-tac-toe").addEventListener("click", Player_makes_move)
-
-
-
