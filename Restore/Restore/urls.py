@@ -16,8 +16,14 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import include, path
+from api import views
 
 urlpatterns = [
     path('polls/', include('api.urls')), #The polls/ is the route on url after http://localhost:8000 ex:http://localhost:8000/polls/
     path('admin/', admin.site.urls),
+    path('user/login/', views.user_login, name="user_login"),
+    path('user/refersh/', views.user_refresh, name="user_refresh"),
+    path('user/logout/', views.user_logout, name="user_logout"),
+    path('user/register/', views.user_register, name="user_register"),
+    path('test/', views.test, name="test"),
 ]
