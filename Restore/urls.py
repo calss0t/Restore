@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from api import views
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('polls/', include('api.urls')), #The polls/ is the route on url after http://localhost:8000 ex:http://localhost:8000/polls/
@@ -26,4 +27,5 @@ urlpatterns = [
     path('user/logout/', views.user_logout, name="user_logout"),
     path('user/register/', views.user_register, name="user_register"),
     path('test/', views.test, name="test"),
+    path('', TemplateView.as_view(template_name="index.html"))
 ]
